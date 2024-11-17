@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin:0;
+	padding:0;
+}
+#inicio[data-role="page"] {
+    background-image: url('../Imagenes/adoracion1.jpg'); /* Ruta correcta a la imagen */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija */
+    background-repeat: no-repeat; /* Evita que se repita */
+    min-height: 100vh; /* Ocupa toda la ventana */
+    padding: 20px;
+}
+
+/* Fondo exclusivo para "Lecturas de Adviento y Navidad" */
+#calendario[data-role="page"] {
+    background-image: url('../Imagenes/Isaiah.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Fondo exclusivo para "Antífonas" */
+#antifonas[data-role="page"] {
+    background-image: url('../Imagenes/adoracion0.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+}
+@media all and (max-width: 1279px) and (min-width: 320px) {
+	 #inicio{
+	background: url(../Imagenes/adoracion1.jpg);/*url(../Imagenes/anunciacion.jpg);*/
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	text-decoration: none;
+}
+	#tradiciones{
+	background: url(../Imagenes/magos.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+	#bendecir{
+	background: url(../Imagenes/corona2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+	#calendario{
+	background: url(../Imagenes/Isaiah.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+    #antifonas{
+	background: url(../Imagenes/adoracion0.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+}
+
+/* tablets (landscape) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1280px) 
+and (orientation : landscape) {
+  #inicio{
+	background: url(../Imagenes/adoracion1-tablet.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	text-decoration: none;
+}
+	#tradiciones{
+	background: url(../Imagenes/magos-tablet.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+	#bendecir{
+	background: url(../Imagenes/Velas-tablet.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+	#calendario{
+	background: url(../Imagenes/Isaiah-tablet.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+    #antifonas{
+	background: url(../Imagenes/adoracion0-tablet.jpg);
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center!important;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+}
+
+.musica {
+    text-align: center;
+    }
+
+.transparente{
+    opacity: 0.8;
+    padding: 0.2em; /*0.2em habia*/
+    margin: 1em 6.5em !important; /*1.0em habia*/
+    }
+.botonpequeño {
+    padding: 0.3em; /*1.0em habia*//*con 0.3 los botones son mas estrechos*/
+    margin: 1em 4.5em  !important;/*1.0em habia*/
+    opacity: 0.7;/*1 habia*/
+    box-shadow: none;
+    }
+.btn-antifona {
+    
+    opacity: 0.5;
+    padding: 0.2em; /*0.2em habia*/
+    margin: 1em 6.5em !important; /*1.0em habia*/
+    }
+
