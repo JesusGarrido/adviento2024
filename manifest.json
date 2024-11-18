@@ -21,12 +21,14 @@
     {
       "src": "imagenes/captura1.png",
       "type": "image/png",
-      "sizes": "1080x1920"
+      "sizes": "1080x1920",
+      "form_factor": "wide"
     },
     {
       "src": "imagenes/captura2.png",
       "type": "image/png",
-      "sizes": "1080x1920"
+      "sizes": "1080x1920",
+      "form_factor": "wide"
     }
   ]
 }
