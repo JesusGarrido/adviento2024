@@ -5,6 +5,7 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
+    
     "icons": [
         {
             "src": "res/icon-192x192.png",
@@ -16,5 +17,18 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "screenshots": [
+  {
+    "src": "imagenes/captura1.png",
+    "type": "image/png",
+    "sizes": "1080x1920"
+  },
+  {
+    "src": "imagenes/captura2.png",
+    "type": "image/png",
+    "sizes": "1080x1920"
+  }
+]
+    
 }
