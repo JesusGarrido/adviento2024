@@ -1,4 +1,5 @@
 {
+  "id": "com.jesusgarrido.adviento2024",
   "name": "Adviento y Navidad",
   "short_name": "Adviento",
   "start_url": "index.html",
@@ -36,9 +37,14 @@
   "orientation": "portrait",
   "categories": ["education", "lifestyle"],
   "default_direction_of_text": "ltr",
-  "iarc_rating_id": "E",
-  "language": "es",
-  "related_applications": [],
-  "scope": "/"
+  "lang": "es",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "dir": "ltr",
+  "launch_handler": {
+    "client_mode": "navigate-new"
+  },
+  "scope_extensions": []
 }
+
 
