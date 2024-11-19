@@ -44,7 +44,9 @@
   "launch_handler": {
     "client_mode": "navigate-new"
   },
-  "scope_extensions": []
+  "scope_extensions": [],
+  "iarc_rating_id": "E"
 }
+
 
 
