@@ -1,11 +1,11 @@
 const CACHE_NAME = "adviento2024-cache-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/res/icon-192x192.png",
-  "/res/icon-512x512.png",
-  "/imagenes/captura1.png",
-  "/imagenes/captura2.png"
+  "/adviento2024/",
+  "/adviento2024/index.html",
+  "/adviento2024/res/icon-192x192.png",
+  "/adviento2024/res/icon-512x512.png",
+  "/adviento2024/imagenes/captura1.png", // Ruta ajustada
+  "/adviento2024/imagenes/captura2.png"  // Ruta ajustada
 ];
 
 // Instalar y cachear recursos
@@ -13,7 +13,9 @@ self.addEventListener("install", (event) => {
   console.log("[Service Worker] Instalando y cacheando recursos...");
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+      return cache.addAll(urlsToCache).catch((error) => {
+        console.error("[Service Worker] Error al cachear:", error);
+      });
     })
   );
 });
