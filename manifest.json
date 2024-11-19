@@ -30,6 +30,15 @@
       "sizes": "1080x1920",
       "form_factor": "wide"
     }
-  ]
+  ],
+  "description": "Aplicación para los días de Adviento y Navidad de 2024",
+  "app_id": "com.jesusgarrido.adviento2024",
+  "orientation": "portrait",
+  "categories": ["education", "lifestyle"],
+  "default_direction_of_text": "ltr",
+  "iarc_rating_id": "E",
+  "language": "es",
+  "related_applications": [],
+  "scope": "/"
 }
 
