@@ -8,7 +8,7 @@ const urlsToCache = [
   "/imagenes/captura2.png"
 ];
 
-// Instalar el Service Worker y cachear recursos
+// Instalar y cachear recursos
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -22,10 +22,8 @@ self.addEventListener("install", (event) => {
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      if (response) {
-        return response; // Devuelve la respuesta desde el caché
-      }
-      return fetch(event.request); // Realiza una solicitud de red si no está en caché
+      // Devuelve del caché si está disponible
+      return response || fetch(event.request);
     })
   );
 });
