@@ -1,96 +1,48 @@
 const CACHE_NAME = "adviento2024-cache-v1";
 const urlsToCache = [
-  "./",
-  "./index.html",
-  "./CSS/estilos.css",
-  "./JS/cordova.js",
-  "./JS/cordova_plugins.js",
-  "./JS/phonegap.js",
-  "./Imagenes/estrella.png",
-  "./manifest.json"
+  "/",
+  "/index.html",
+  "/res/icon-192x192.png",
+  "/res/icon-512x512.png",
+  "/imagenes/captura1.png",
+  "/imagenes/captura2.png"
 ];
 
-// Instalación del Service Worker
-self.addEventListener("install", event => {
+// Instalar el Service Worker y cachear recursos
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log("Archivos en caché durante la instalación del Service Worker");
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("Archivos cacheados correctamente.");
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-// Activación del Service Worker
-self.addEventListener("activate", event => {
+// Interceptar solicitudes y servir desde el caché si es posible
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response; // Devuelve la respuesta desde el caché
+      }
+      return fetch(event.request); // Realiza una solicitud de red si no está en caché
+    })
+  );
+});
+
+// Actualizar el caché en segundo plano
+self.addEventListener("activate", (event) => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
+    caches.keys().then((cacheNames) =>
+      Promise.all(
+        cacheNames.map((cacheName) => {
           if (!cacheWhitelist.includes(cacheName)) {
-            console.log(`Eliminando caché antigua: ${cacheName}`);
+            console.log("Eliminando caché antiguo:", cacheName);
             return caches.delete(cacheName);
           }
         })
-      );
-    })
+      )
+    )
   );
 });
-
-// Interceptar las solicitudes para servir contenido desde la caché
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
-
-const CACHE_NAME = "adviento2024-cache-v1";
-const urlsToCache = [
-  "./",
-  "./index.html",
-  "./CSS/estilos.css",
-  "./JS/cordova.js",
-  "./JS/cordova_plugins.js",
-  "./JS/phonegap.js",
-  "./Imagenes/estrella.png",
-  "./manifest.json"
-];
-
-// Instalación del Service Worker
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log("Archivos en caché durante la instalación del Service Worker");
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
-
-// Activación del Service Worker
-self.addEventListener("activate", event => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            console.log(`Eliminando caché antigua: ${cacheName}`);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-// Interceptar las solicitudes para servir contenido desde la caché
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
-d8d6b5e (Guarda cambios locales antes de hacer pull)
