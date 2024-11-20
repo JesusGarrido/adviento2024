@@ -1,8 +1,9 @@
 {
-  "id": "com.jesusgarrido.adviento2024",
+  "id": "https://jesusgarrido.github.io/adviento2024/",
   "name": "Adviento y Navidad",
   "short_name": "Adviento",
-  "start_url": "index.html",
+  "start_url": "https://jesusgarrido.github.io/adviento2024/index.html",
+  "scope": "https://jesusgarrido.github.io/adviento2024/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
@@ -33,20 +34,14 @@
     }
   ],
   "description": "Aplicación para los días de Adviento y Navidad de 2024",
-  "app_id": "com.jesusgarrido.adviento2024",
   "orientation": "portrait",
   "categories": ["education", "lifestyle"],
-  "default_direction_of_text": "ltr",
-  "lang": "es",
-  "prefer_related_applications": false,
-  "scope": "/",
   "dir": "ltr",
+  "lang": "es",
   "launch_handler": {
     "client_mode": "navigate-new"
   },
+  "prefer_related_applications": false,
   "scope_extensions": [],
   "iarc_rating_id": "E"
 }
-
-
-
